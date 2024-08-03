@@ -67,6 +67,12 @@ public class LunaChatMessageCommand {
      */
     protected void sendTellMessage(ChannelMember inviter, String invitedName, String message) {
 
+        // プレイヤー名が16文字を超えていないかどうか
+        if( invitedName.length() > 16 ) {
+            inviter.sendMessage(Messages.errmsgNotfoundPlayer(invitedName));
+            return;
+        }
+
         // 招待相手が存在するかどうかを確認する
         ChannelMember invited = ChannelMember.getChannelMember(invitedName);
         if ( invited == null || !invited.isOnline() ) {

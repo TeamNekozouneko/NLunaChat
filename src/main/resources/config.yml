@@ -169,7 +169,7 @@ normalChatMessageFormat: '&f%prefix%displayname%suffix&a:&f %msg'
 
 # Color code (&a, &b, etc.) in normal chat (non-channel chat)
 # Whether to enable. If set to false, color codes will not be converted.
-enableNormalChatColorCode: true
+enableNormalChatColorCode: false
 
 # Whether normal chat (non-channel chat) is clickable.
 # If it is clickable, you can click the player name to send a private message, 
@@ -201,7 +201,7 @@ japanizeDisplayLine: 1
 # The following keywords can be used for formatting.
 # %msg: Original content
 # %japanize: Japanize Within the converted statement
-japanizeLine1Format: '%msg &6(%japanize)'
+japanizeLine1Format: '&f%japanize &7(%msg)'
 
 # Sets the display format for the second line when japanizeDisplayLine is 2.
 # The following keywords can be used for formatting.

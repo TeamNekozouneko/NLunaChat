@@ -106,6 +106,12 @@ public class InviteCommand extends LunaChatSubCommand {
             return true;
         }
 
+        // プレイヤー名が16文字を超えていないかどうか
+        if( invitedName.length() > 16 ) {
+            sender.sendMessage(Messages.errmsgNotfoundPlayer(invitedName));
+            return true;
+        }
+
         // モデレーターかどうか確認する
         if ( !channel.hasModeratorPermission(sender) ) {
             sender.sendMessage(Messages.errmsgNotModerator());

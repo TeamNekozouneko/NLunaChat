@@ -102,6 +102,12 @@ public class UnhideCommand extends LunaChatSubCommand {
             }
         }
 
+        // プレイヤー名が16文字を超えていないかどうか
+        if( cname != null && ( isPlayerCommand || ( !isPlayerCommand && !isChannelCommand ) ) && cname.length() > 16 ) {
+            sender.sendMessage(Messages.errmsgNotfoundPlayer(cname));
+            return true;
+        }
+
         // チャンネルかプレイヤーが存在するかどうかをチェックする
         Channel channel = api.getChannel(cname);
         if ( !isPlayerCommand && channel != null ) {
